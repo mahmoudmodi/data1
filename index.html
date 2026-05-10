@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mahmoud Helal | Professional Telecommunications Engineer & Programming Enthusiast. Personal portfolio and advanced age calculator website with modern futuristic design." />
+  <meta name="keywords" content="Mahmoud Helal, Portfolio, Age Calculator, Telecommunications Engineer, Programming, Technology" />
+  <meta name="author" content="Mahmoud Helal" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Mahmoud Helal | Portfolio & Age Calculator</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://ui-avatars.com/api/?name=Mahmoud+Helal&background=0d6efd&color=fff&bold=true&size=128" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Page Loader -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <h2 class="loader-title">Mahmoud Helal</h2>
+      <p class="loader-subtitle">Loading premium experience...</p>
+    </div>
+  </div>
+
+  <!-- Particles Background -->
+  <canvas id="particlesCanvas"></canvas>
+
+  <!-- Floating Utilities -->
+  <div class="floating-info glass-card d-none d-lg-flex">
+    <div>
+      <i class="fa-regular fa-calendar-days"></i>
+      <span id="todayDate">Today's date</span>
+    </div>
+    <div>
+      <i class="fa-regular fa-clock"></i>
+      <span id="liveClock">00:00:00</span>
+    </div>
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Navbar -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <span class="brand-glow">MH</span> Mahmoud Helal
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#friends">Friends</a></li>
+          <li class="nav-item"><a class="nav-link" href="#age-calculator">Age Calculator</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-neon" href="#age-calculator">Try Calculator</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero-section d-flex align-items-center">
+    <div class="container position-relative z-2">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 text-center" data-aos="zoom-in" data-aos-duration="1200">
+          <div class="hero-image-wrapper">
+            <div class="hero-image-glow"></div>
+            <img
+              src="1.jpeg"
+              alt="Mahmoud Helal profile"
+              class="hero-image img-fluid"
+            />
+          </div>
+        </div>
+        <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1300">
+          <div class="hero-badge glass-card mb-4">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Futuristic Personal Portfolio</span>
+          </div>
+          <h1 class="hero-title">Mahmoud Helal</h1>
+          <h2 class="hero-subtitle">
+            Professional Telecommunications Engineer &amp;
+            <span id="typingText" class="typing-text"></span>
+          </h2>
+          <p class="hero-description">
+            Smart telecommunications engineer, passionate about programming and technology, a creative thinker,
+            and a social personality with many friends and achievements. Mahmoud continuously explores innovation,
+            develops new skills, and builds impactful connections through knowledge and modern digital tools.
+          </p>
+          <div class="hero-actions d-flex flex-wrap gap-3 mt-4">
+            <a href="#about" class="btn btn-neon px-4 py-3">Explore Portfolio</a>
+            <a href="#contact" class="btn btn-outline-glow px-4 py-3">Get In Touch</a>
+          </div>
+
+          <div class="hero-mini-stats row g-3 mt-4">
+            <div class="col-sm-4">
+              <div class="stat-mini glass-card">
+                <h3 class="counter" data-target="25">0</h3>
+                <p>Skills & Tools</p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="stat-mini glass-card">
+                <h3 class="counter" data-target="12">0</h3>
+                <p>Certifications</p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="stat-mini glass-card">
+                <h3 class="counter" data-target="50">0</h3>
+                <p>Strong Connections</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-blur hero-blur-1"></div>
+    <div class="hero-blur hero-blur-2"></div>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <span class="section-badge">About Mahmoud</span>
+          <h2 class="section-title">A passionate engineer with a future-focused mindset</h2>
+          <p class="section-text mx-auto">
+            Mahmoud Helal is a Telecommunications Engineer who combines technical accuracy with creativity, curiosity,
+            and strong social intelligence. He loves programming, modern technology, innovation, and continuous learning.
+          </p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-7" data-aos="fade-right">
+            <div class="glass-card about-card h-100">
+              <h3 class="content-title">Professional Biography</h3>
+              <p>
+                Mahmoud Helal is a dedicated Telecommunications Engineer with a strong passion for programming,
+                digital systems, and emerging technologies. He enjoys transforming ideas into practical solutions,
+                learning advanced tools, and staying updated with the latest innovations in technology.
+              </p>
+              <p>
+                Beyond his technical side, Mahmoud is known for his social personality, wide network of friends,
+                and ability to build meaningful connections. His mindset blends innovation, collaboration, and ambition,
+                helping him continuously grow in both professional and personal environments.
+              </p>
+              <p>
+                He also values lifelong learning, skill development, and certifications that strengthen his expertise.
+                Mahmoud believes the future belongs to those who stay curious, adapt quickly, and create positive impact.
+              </p>
+
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="info-chip">
+                    <i class="fa-solid fa-tower-cell"></i>
+                    Telecommunications Engineer
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-chip">
+                    <i class="fa-solid fa-code"></i>
+                    Loves Programming & Automation
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-chip">
+                    <i class="fa-solid fa-certificate"></i>
+                    Certifications & Diverse Skills
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-chip">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Innovation & Learning Mindset
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="fade-left">
+            <div class="glass-card timeline-card h-100">
+              <h3 class="content-title">Highlights</h3>
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div>
+                  <h4>Engineering Background</h4>
+                  <p>Built on analytical thinking, telecommunications knowledge, and technical problem-solving.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div>
+                  <h4>Technology Enthusiast</h4>
+                  <p>Passionate about software, digital experiences, smart tools, and modern development trends.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div>
+                  <h4>Social & Connected</h4>
+                  <p>Known for having many friends, strong social relationships, and collaborative energy.</p>
+                </div>
+              </div>
+              <div class="timeline-item mb-0">
+                <span class="timeline-dot"></span>
+                <div>
+                  <h4>Always Learning</h4>
+                  <p>Continuously seeks new certifications, better skills, and innovative paths for growth.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Friends Section -->
+    <section id="friends" class="section-padding section-alt">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <span class="section-badge">Friends Network</span>
+          <h2 class="section-title">Professional friends and inspiring connections</h2>
+          <p class="section-text mx-auto">
+            Mahmoud values friendship, teamwork, and surrounding himself with supportive, talented people from different fields.
+          </p>
+        </div>
+
+        <div class="row g-4" id="friendsGrid">
+          <!-- Friend Card 1 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in-up">
+            <div class="glass-card friend-card special-friend h-100">
+              <div class="friend-top">
+                <img src="2.jpeg" alt="Youssef Samy" class="friend-avatar" />
+                <span class="special-badge">Best Friend</span>
+              </div>
+              <h3>Youssef Samy</h3>
+              <p class="friend-role">Close Companion</p>
+              <p class="friend-bio">Best friend and close companion who always brings loyalty, positivity, and strong support.</p>
+              <ul class="friend-links-list">
+                <li><i class="fa-solid fa-user-group"></i> Friends:</li>
+                <li>Ahmed</li>
+                <li>Ali</li>
+                <li>Omar</li>
+                <li>Mostafa</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Friend Card 2 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="50">
+            <div class="glass-card friend-card h-100">
+              <div class="friend-top"><img src="3.jpeg" alt="Ahmed Nabil" class="friend-avatar" /></div>
+              <h3>Abdelrahman Hawas</h3>
+              <p class="friend-role">Software Developer</p>
+              <p class="friend-bio">Creative developer with a sharp eye for user-focused solutions and clean coding practices.</p>
+              <ul class="friend-links-list">
+                <li><i class="fa-solid fa-user-group"></i> Friends:</li>
+                <li>Youssef</li>
+                <li>Ali</li>
+                <li>Omar</li>
+                <li>Kareem</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Friend Card 3 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
+            <div class="glass-card friend-card h-100">
+              <div class="friend-top"><img src="https://i.pravatar.cc/300?img=14" alt="Ali Hossam" class="friend-avatar" /></div>
+              <h3>Ali Hossam</h3>
+              <p class="friend-role">Network Engineer</p>
+              <p class="friend-bio">Reliable engineer who enjoys solving connectivity challenges and optimizing digital infrastructure.</p>
+              <ul class="friend-links-list">
+                <li><i class="fa-solid fa-user-group"></i> Friends:</li>
+                <li>Ahmed</li>
+                <li>Youssef</li>
+                <li>Omar</li>
+                <li>Hassan</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Friend Card 4 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in-up">
+            <div class="glass-card friend-card h-100">
+              <div class="friend-top"><img src="https://i.pravatar.cc/300?img=15" alt="Omar Tarek" class="friend-avatar" /></div>
+              <h3>Omar Tarek</h3>
+              <p class="friend-role">UI/UX Designer</p>
+              <p class="friend-bio">Design-minded friend who transforms ideas into elegant, modern, and smooth digital experiences.</p>
+              <ul class="friend-links-list">
+                <li><i class="fa-solid fa-user-group"></i> Friends:</li>
+                <li>Ahmed</li>
+                <li>Youssef</li>
+                <li>Ali</li>
+                <li>Samir</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Friend Card 5 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="50">
+            <div class="glass-card friend-card h-100">
+              <div class="friend-top"><img src="https://i.pravatar.cc/300?img=16" alt="Mostafa Adel" class="friend-avatar" /></div>
+              <h3>Mostafa Adel</h3>
+              <p class="friend-role">Cybersecurity Analyst</p>
+              <p class="friend-bio">Security-focused friend with a strong passion for protecting systems and digital assets.</p>
+              <ul class="friend-links-list">
+                <li><i class="fa-solid fa-user-group"></i> Friends:</li>
+                <li>Ahmed</li>
+                <li>Ali</li>
+                <li>Omar</li>
+                <li>Youssef</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Friend Card 6 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
+            <div class="glass-card friend-card h-100">
+              <div class="friend-top"><img src="https://i.pravatar.cc/300?img=17" alt="Kareem Essam" class="friend-avatar" /></div>
+              <h3>Kareem Essam</h3>
+              <p class="friend-role">Data Analyst</p>
+              <p class="friend-bio">Insight-driven friend who enjoys turning complex data into meaningful, easy-to-read stories.</p>
+              <ul class="friend-links-list">
+                <li><i class="fa-solid fa-user-group"></i> Friends:</li>
+                <li>Ahmed</li>
+                <li>Youssef</li>
+                <li>Ali</li>
+                <li>Maher</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Friend Card 7 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in-up">
+            <div class="glass-card friend-card h-100">
+              <div class="friend-top"><img src="https://i.pravatar.cc/300?img=18" alt="Hassan Fathy" class="friend-avatar" /></div>
+              <h3>Hassan Fathy</h3>
+              <p class="friend-role">Telecom Specialist</p>
+              <p class="friend-bio">Technical and practical professional with a keen interest in communication systems and innovation.</p>
+              <ul class="friend-links-list">
+                <li><i class="fa-solid fa-user-group"></i> Friends:</li>
+                <li>Ahmed</li>
+                <li>Ali</li>
+                <li>Omar</li>
+                <li>Mostafa</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Friend Card 8 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="50">
+            <div class="glass-card friend-card h-100">
+              <div class="friend-top"><img src="https://i.pravatar.cc/300?img=19" alt="Samir Khaled" class="friend-avatar" /></div>
+              <h3>Samir Khaled</h3>
+              <p class="friend-role">Project Coordinator</p>
+              <p class="friend-bio">Organized and dependable friend who helps teams move forward with clarity and confidence.</p>
+              <ul class="friend-links-list">
+                <li><i class="fa-solid fa-user-group"></i> Friends:</li>
+                <li>Youssef</li>
+                <li>Ali</li>
+                <li>Omar</li>
+                <li>Hassan</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Friend Card 9 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
+            <div class="glass-card friend-card h-100">
+              <div class="friend-top"><img src="https://i.pravatar.cc/300?img=20" alt="Maher Salah" class="friend-avatar" /></div>
+              <h3>Maher Salah</h3>
+              <p class="friend-role">AI Enthusiast</p>
+              <p class="friend-bio">Forward-thinking friend interested in intelligent systems, automation, and future-ready tools.</p>
+              <ul class="friend-links-list">
+                <li><i class="fa-solid fa-user-group"></i> Friends:</li>
+                <li>Ahmed</li>
+                <li>Youssef</li>
+                <li>Ali</li>
+                <li>Mostafa</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Friend Card 10 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in-up">
+            <div class="glass-card friend-card h-100">
+              <div class="friend-top"><img src="https://i.pravatar.cc/300?img=21" alt="Fady Raafat" class="friend-avatar" /></div>
+              <h3>Fady Raafat</h3>
+              <p class="friend-role">Business Developer</p>
+              <p class="friend-bio">Ambitious and social friend with a talent for communication, growth ideas, and strong networking.</p>
+              <ul class="friend-links-list">
+                <li><i class="fa-solid fa-user-group"></i> Friends:</li>
+                <li>Ahmed</li>
+                <li>Youssef</li>
+                <li>Omar</li>
+                <li>Kareem</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Age Calculator Section -->
+    <section id="age-calculator" class="section-padding">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <span class="section-badge">Main Feature</span>
+          <h2 class="section-title">Advanced age calculator</h2>
+          <p class="section-text mx-auto">
+            Enter your date of birth and get a detailed breakdown of your age, next birthday countdown, zodiac sign,
+            and birth day with animated live results.
+          </p>
+        </div>
+
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="glass-card calc-form-card">
+              <div class="calc-header">
+                <div>
+                  <h3 class="content-title mb-1">Calculate Your Age</h3>
+                  <p class="mb-0 text-white-50">Fast, dynamic, and accurate age insights.</p>
+                </div>
+                <div class="pulse-orb"></div>
+              </div>
+
+              <form id="ageForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <label for="day" class="form-label">Day</label>
+                    <input type="number" class="form-control custom-input" id="day" min="1" max="31" placeholder="DD" required />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="month" class="form-label">Month</label>
+                    <input type="number" class="form-control custom-input" id="month" min="1" max="12" placeholder="MM" required />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="year" class="form-label">Year</label>
+                    <input type="number" class="form-control custom-input" id="year" min="1900" max="2100" placeholder="YYYY" required />
+                  </div>
+                </div>
+
+                <div class="d-grid gap-3 mt-4">
+                  <button type="submit" class="btn btn-neon btn-lg">
+                    <i class="fa-solid fa-calculator"></i> Calculate Age
+                  </button>
+                  <button type="button" id="resetBtn" class="btn btn-outline-glow btn-lg">
+                    <i class="fa-solid fa-rotate-left"></i> Reset Data
+                  </button>
+                </div>
+              </form>
+
+              <div class="calc-extra mt-4">
+                <div class="mini-note glass-card">
+                  <i class="fa-solid fa-bolt"></i>
+                  <span>Shows years, months, weeks, days, hours, minutes, seconds, zodiac sign, next birthday, and birth day.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="glass-card result-shell">
+              <div class="result-header d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div>
+                  <h3 class="content-title mb-1">Age Results</h3>
+                  <p class="mb-0 text-white-50">Your results will appear here after calculation.</p>
+                </div>
+                <div class="result-pill">
+                  <i class="fa-solid fa-sparkles"></i>
+                  <span>Animated Cards</span>
+                </div>
+              </div>
+
+              <div id="resultPlaceholder" class="result-placeholder text-center">
+                <i class="fa-regular fa-hourglass-half"></i>
+                <h4>Ready to calculate</h4>
+                <p>Enter a valid birth date and click the calculate button to reveal premium age insights.</p>
+              </div>
+
+              <div id="resultsGrid" class="row g-3 d-none">
+                <div class="col-sm-6 col-xl-4"><div class="result-card"><span>Years</span><h4 id="yearsResult">0</h4></div></div>
+                <div class="col-sm-6 col-xl-4"><div class="result-card"><span>Months</span><h4 id="monthsResult">0</h4></div></div>
+                <div class="col-sm-6 col-xl-4"><div class="result-card"><span>Weeks</span><h4 id="weeksResult">0</h4></div></div>
+                <div class="col-sm-6 col-xl-4"><div class="result-card"><span>Days</span><h4 id="daysResult">0</h4></div></div>
+                <div class="col-sm-6 col-xl-4"><div class="result-card"><span>Hours</span><h4 id="hoursResult">0</h4></div></div>
+                <div class="col-sm-6 col-xl-4"><div class="result-card"><span>Minutes</span><h4 id="minutesResult">0</h4></div></div>
+                <div class="col-sm-6 col-xl-4"><div class="result-card"><span>Seconds</span><h4 id="secondsResult">0</h4></div></div>
+                <div class="col-sm-6 col-xl-4"><div class="result-card"><span>Next Birthday In</span><h4 id="birthdayResult">0 Days</h4></div></div>
+                <div class="col-sm-6 col-xl-4"><div class="result-card"><span>Zodiac Sign</span><h4 id="zodiacResult">-</h4></div></div>
+                <div class="col-sm-6 col-xl-6"><div class="result-card"><span>Day of Birth</span><h4 id="birthDayResult">-</h4></div></div>
+                <div class="col-sm-6 col-xl-6"><div class="result-card"><span>Exact Age</span><h4 id="exactAgeResult">-</h4></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding section-alt">
+      <div class="container">
+        <div class="section-heading text-center mb-5" data-aos="fade-up">
+          <span class="section-badge">Contact</span>
+          <h2 class="section-title">Connect with Mahmoud Helal</h2>
+          <p class="section-text mx-auto">
+            Reach out through phone, WhatsApp, Facebook, or Telegram using the quick action contact cards below.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4" data-aos="flip-left">
+            <div class="glass-card contact-card h-100">
+              <div class="contact-icon"><i class="fa-solid fa-phone-volume"></i></div>
+              <h3>Phone</h3>
+              <p>Direct phone contact for quick communication.</p>
+              <a href="tel:01125725988" class="btn btn-neon w-100">Call Now</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="100">
+            <div class="glass-card contact-card h-100">
+              <div class="contact-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+              <h3>WhatsApp</h3>
+              <p>Chat instantly on WhatsApp with one tap.</p>
+              <a href="https://wa.me/201125725988" target="_blank" rel="noopener noreferrer" class="btn btn-neon w-100">Open WhatsApp</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="200">
+            <div class="glass-card contact-card h-100">
+              <div class="contact-icon facebook"><i class="fa-brands fa-facebook-f"></i></div>
+              <h3>Facebook</h3>
+              <p>Follow or message Mahmoud on Facebook.</p>
+              <a href="https://www.facebook.com/mahmoud.helal.al.sager?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="btn btn-neon w-100">Visit Facebook</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="300">
+            <div class="glass-card contact-card h-100">
+              <div class="contact-icon telegram"><i class="fa-brands fa-telegram"></i></div>
+              <h3>Telegram</h3>
+              <p>Connect via Telegram for fast digital communication.</p>
+              <a href="https://t.me/Mahmoud_helal_abdullah" target="_blank" rel="noopener noreferrer" class="btn btn-neon w-100">Open Telegram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-inner glass-card text-center">
+        <p class="mb-1">Designed By Mahmoud Helal</p>
+        <small>© <span id="currentYear"></span> All Rights Reserved • Premium Portfolio Experience</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
